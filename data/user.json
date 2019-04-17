@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "name": "小猪",
+    "email": "342393950@qq.com",
+    "password": "123456",
+    "identity": 0
+  },
+  {
+    "id": 2,
+    "name": "小黄",
+    "email": "535233431@qq.com",
+    "password": "123456",
+    "identity": 1
+  },
+  {
+    "id": 3,
+    "name": "小黑",
+    "email": "xiaohei@qq.com",
+    "password": "123456",
+    "identity": 2
+  }
+]
