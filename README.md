@@ -1,4 +1,4 @@
-# vue3.0-vuex
+# vue-vuex
 
 ## Project setup
 ```
