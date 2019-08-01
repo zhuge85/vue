@@ -3,13 +3,54 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 
+import '@a/css/basic.less'
+// import '@a/css/loading.css'
+
+//导入代码高亮文件
+import hljs from 'highlight.js'
+import 'highlight.js/styles/monokai-sublime.css'
+
+//自定义一个代码高亮指令
+Vue.directive('highlight', function(el) {
+  let blocks = el.querySelectorAll('pre code')
+  setTimeout(() => {
+    blocks.forEach(block => {
+      hljs.highlightBlock(block)
+    })
+  }, 20)
+})
+
 import axios from './axios'
-// 注册后即可使用
 Vue.prototype.$axios = axios
+
+// 引入ajax
+import $ from './ajax'
+Vue.prototype.$http = $
 
 import echarts from 'vue-echarts'
 // 注册后即可使用
 Vue.prototype.$echarts = echarts
+
+// 引入 ZhuMessage
+import ZhuMessage from './plugins/message'
+Vue.prototype.$zhumessage = ZhuMessage.install
+
+// 引入 Toast
+import Toast from './plugins/toast/'
+// Vue.use(Toast)
+Vue.prototype.$toast = Toast.showToast
+
+// Loading
+import Loading from './plugins/loading'
+Vue.use(Loading)
+
+// 引入 Msgbox
+import Msgbox from './plugins/msgbox'
+Vue.use(Msgbox)
+
+// 引入 Dialog
+import ZhuDialog from './plugins/dialog'
+Vue.use(ZhuDialog)
 
 // vue-lazyload图片懒加载
 Vue.use(VueLazyload, {

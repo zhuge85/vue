@@ -24,12 +24,10 @@ export default {
   },
   watch: {
     'id': function (newVal, oldVal) {
-      // console.log(newVal,oldVal)
       this.$router.replace(`/route/url/${this.id}?name=${this.keyword.name}&age=${this.keyword.age}`)
     },
     'keyword': {
       handler(curVal, oldVal) {
-        // console.log(curVal, oldVal)
         this.$router.replace(`/route/url/${this.id}?name=${this.keyword.name}&age=${this.keyword.age}`)
       },
       // immediate deep

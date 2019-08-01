@@ -51,7 +51,7 @@ export default {
             { index: "/table", title: "table" },
             { index: "/uploadpage", title: "uploadpage" },
             { index: "/aplayer", title: "aplayer" },
-            { index: "/other", title: "other" }
+            { index: "/other", title: "other" },
           ]
         },
         {
@@ -69,6 +69,10 @@ export default {
         {
           title: "自定义指令",
           index: "/directives"
+        },
+        {
+          title: "自定义消息提示",
+          index: "/toast"
         },
       ]
     }

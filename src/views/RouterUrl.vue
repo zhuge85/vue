@@ -1,8 +1,8 @@
 <template>
   <div class="routeurl">
     <h1>获取路由参数</h1>
-    <el-button @click="params" type="primary">获取数据</el-button>
-    <el-button @click="query" type="danger">清除数据</el-button>
+    <el-button @click="param" type="primary">随机param</el-button>
+    <el-button @click="query" type="danger">随机query</el-button>
     <UrlPage :id=id :keyword=keyword></UrlPage>
   </div>
 </template>
@@ -22,26 +22,17 @@ export default {
   components: {
     UrlPage: resolve => require(['@c/UrlPage'], resolve)
   },
-  created() {
-
-  },
-  mounted() {
-
-  },
   methods: {
-    params() {
+    param() {
       this.id = this.random(200)
-      // this.$router.push(`/route/url/${this.id}?name=${this.keyword.name}&age=${this.keyword.age}`)
     },
     query() {
       let len = this.word.length
       this.keyword.name = this.word[this.random(len)] + this.word[this.random(len)]
       this.keyword.age = this.random(50)
-      // this.$router.push(`/route/url/${this.id}?name=${this.keyword.name}&age=${this.keyword.age}`)
     },
     random(num) {
       return Math.floor(Math.random() * num)
-      // return Math.floor(Math.random() * num + 1)
     }
   }
 }

@@ -61,7 +61,6 @@ export default {
           break;
         default:
       }
-      // this.$router.push('/route/link')
     },
     routeurl(cmditem) {
       switch (cmditem) {

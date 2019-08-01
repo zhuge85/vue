@@ -71,6 +71,7 @@ module.exports = {
       .set('@c', resolve('./src/components'))
       .set('@v', resolve('./src/views'))
       .set('@a', resolve('./src/assets'))
+      .set('@img', resolve('./src/assets/img'))
     if (debug) {
       // 本地开发配置
     } else {

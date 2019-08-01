@@ -6,7 +6,7 @@ import { Message } from 'element-ui'
 
 const router = new VueRouter({
   mode: 'history',
-  base: process.env.BASE_URL, // '/filename/'
+  base: '/vue3/', //process.env.BASE_URL, // '/filename/'
   linkActiveClass: '',
   linkExactActiveClass: 'active',
   routes: [
@@ -67,6 +67,10 @@ const router = new VueRouter({
               component: resolve => require(['@v/RouterLink'], resolve),
               children: [
                 {
+                  path: '/',
+                  redirect: '/route/link/p1'
+                },
+                {
                   name: 'LinkPage',
                   path: '/route/link/:id',
                   component: resolve => require(['@c/LinkPage'], resolve)
@@ -97,6 +101,10 @@ const router = new VueRouter({
         {
           path: '/directives',
           component: resolve => require(['@v/Directives'], resolve)
+        },
+        {
+          path: '/toast',
+          component: resolve => require(['@v/Toast'], resolve)
         }
       ]
     },

@@ -54,7 +54,7 @@ export default {
   },
   methods: {
     fetchUser() {
-      this.$axios('/user.json').then(res => {
+      this.$axios('/api/user.json').then(res => {
         // console.log(res.data)
         this.$store.dispatch('setHomeinfo', res.data);
       });

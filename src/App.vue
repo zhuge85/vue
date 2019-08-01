@@ -8,10 +8,17 @@
 export default {
   name: 'App',
   created() {
+    document.documentElement.classList.add('loaded')
+    setTimeout(() => {
+      document.body.removeChild(document.getElementById('loader-wrapper'));
+      document.documentElement.classList.remove('loaded')
+    }, 1200)
     if (sessionStorage.token) {
       const decode = JSON.parse(sessionStorage.token);
       this.$store.dispatch('setIsAutnenticated', !this.isEmpty(decode));
       this.$store.dispatch('setUser', decode);
+    } else {
+      this.$router.push('/login');
     }
   },
   methods: {
